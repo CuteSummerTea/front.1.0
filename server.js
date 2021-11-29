@@ -12,8 +12,9 @@ const server = http.createServer(function (request, response){
         const html = fs.readFileSync('index.html', 'utf8');
         response.end(html);
     }
-
 }) ;
 
-server.listen(3000);
+console.log('port = ', process.env.PORT);
+
+server.listen(process.env.PORT || 3000);
 console.log('server started!');
